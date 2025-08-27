@@ -108,7 +108,7 @@ export const RubulMoutSite = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             {/* Dr. Rubul Mout Section */}
             <div className="text-left">
-              <h3 className="font-bold text-lg mb-4 text-[#ff4164]">
+              <h3 className="font-bold text-lg mb-4 text-[#df4158]">
                 Dr. Rubul Mout
               </h3>
               <p className="text-gray-300 leading-relaxed text-sm text-left">
@@ -120,62 +120,62 @@ export const RubulMoutSite = () => {
             {/* Quick Links - Left Aligned Section */}
             <div className="text-left">
               <div className="w-32">
-                <h4 className="font-bold text-lg mb-4 text-[#ff4164]">
+                <h4 className="font-bold text-lg mb-4 text-[#df4158]">
                   Quick Links
                 </h4>
                 <div className="space-y-2 text-left">
                   <button 
                     onClick={() => handleTabChange('research')}
-                    className="block text-gray-300 hover:text-[#ff4164] transition-colors duration-300 text-sm relative group"
+                    className="block text-gray-300 hover:text-[#df4158] transition-colors duration-300 text-sm relative group"
                   >
                     <span className="relative">
                       Research
-                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#ff4164] transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#df4158] transition-all duration-300 group-hover:w-full"></span>
                     </span>
                   </button>
                   <button 
                     onClick={() => handleTabChange('biography')}
-                    className="block text-gray-300 hover:text-[#ff4164] transition-colors duration-300 text-sm relative group"
+                    className="block text-gray-300 hover:text-[#df4158] transition-colors duration-300 text-sm relative group"
                   >
                     <span className="relative">
                       Biography
-                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#ff4164] transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#df4158] transition-all duration-300 group-hover:w-full"></span>
                     </span>
                   </button>
                   <button 
                     onClick={() => handleTabChange('publications')}
-                    className="block text-gray-300 hover:text-[#ff4164] transition-colors duration-300 text-sm relative group"
+                    className="block text-gray-300 hover:text-[#df4158] transition-colors duration-300 text-sm relative group"
                   >
                     <span className="relative">
                       Publications
-                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#ff4164] transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#df4158] transition-all duration-300 group-hover:w-full"></span>
                     </span>
                   </button>
                   <button 
                     onClick={() => handleTabChange('patents')}
-                    className="block text-gray-300 hover:text-[#ff4164] transition-colors duration-300 text-sm relative group"
+                    className="block text-gray-300 hover:text-[#df4158] transition-colors duration-300 text-sm relative group"
                   >
                     <span className="relative">
                       Patents
-                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#ff4164] transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#df4158] transition-all duration-300 group-hover:w-full"></span>
                     </span>
                   </button>
                   <button 
                     onClick={() => handleTabChange('teaching')}
-                    className="block text-gray-300 hover:text-[#ff4164] transition-colors duration-300 text-sm relative group"
+                    className="block text-gray-300 hover:text-[#df4158] transition-colors duration-300 text-sm relative group"
                   >
                     <span className="relative">
                       Science Activism
-                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#ff4164] transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#df4158] transition-all duration-300 group-hover:w-full"></span>
                     </span>
                   </button>
                   <button 
                     onClick={() => handleTabChange('contact')}
-                    className="block text-gray-300 hover:text-[#ff4164] transition-colors duration-300 text-sm relative group"
+                    className="block text-gray-300 hover:text-[#df4158] transition-colors duration-300 text-sm relative group"
                   >
                     <span className="relative">
                       Contact
-                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#ff4164] transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#df4158] transition-all duration-300 group-hover:w-full"></span>
                     </span>
                   </button>
                 </div>
@@ -185,7 +185,7 @@ export const RubulMoutSite = () => {
             {/* External Links - Left Aligned Section */}
             <div className="text-left">
               <div className="w-32">
-                <h4 className="font-bold text-lg mb-4 text-[#ff4164]">
+                <h4 className="font-bold text-lg mb-4 text-[#df4158]">
                   External Links
                 </h4>
                 <div className="space-y-2 text-left">
@@ -193,33 +193,33 @@ export const RubulMoutSite = () => {
                     href="https://upliftlibraries.com/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block text-gray-300 hover:text-[#ff4164] transition-colors duration-300 text-sm relative group"
+                    className="block text-gray-300 hover:text-[#df4158] transition-colors duration-300 text-sm relative group"
                   >
                     <span className="relative">
                       Uplift Libraries
-                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#ff4164] transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#df4158] transition-all duration-300 group-hover:w-full"></span>
                     </span>
                   </a>
                   <a 
                     href="https://research.childrenshospital.org/rubulmout/Science-activism" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block text-gray-300 hover:text-[#ff4164] transition-colors duration-300 text-sm relative group"
+                    className="block text-gray-300 hover:text-[#df4158] transition-colors duration-300 text-sm relative group"
                   >
                     <span className="relative">
                       Sunday Science Activism
-                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#ff4164] transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#df4158] transition-all duration-300 group-hover:w-full"></span>
                     </span>
                   </a>
                   <a 
                     href="https://scholar.google.com/citations?user=NpMfqDUAAAAJ&hl=en" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block text-gray-300 hover:text-[#ff4164] transition-colors duration-300 text-sm relative group"
+                    className="block text-gray-300 hover:text-[#df4158] transition-colors duration-300 text-sm relative group"
                   >
                     <span className="relative">
                       Citations
-                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#ff4164] transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#df4158] transition-all duration-300 group-hover:w-full"></span>
                     </span>
                   </a>
                 </div>
@@ -230,7 +230,7 @@ export const RubulMoutSite = () => {
           {/* Decorative separator */}
           <div className="flex items-center justify-center my-8">
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
-            <div className="mx-4 w-2 h-2 bg-gradient-to-r from-[#ff4164] to-[#dbaf0d] rounded-full"></div>
+            <div className="mx-4 w-2 h-2 bg-[#ce233c] rounded-full"></div>
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
           </div>
           
@@ -241,7 +241,7 @@ export const RubulMoutSite = () => {
                 href="https://hms.harvard.edu/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-[#ff4164] font-medium hover:underline"
+                className="text-[#df4158] font-medium hover:underline"
               >
                 &nbsp;Harvard Medical School
               </a>
@@ -250,7 +250,7 @@ export const RubulMoutSite = () => {
                 href="https://www.childrenshospital.org/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-[#ff4164] font-medium hover:underline"
+                className="text-[#df4158] font-medium hover:underline"
               >
                 Boston Children's Hospital
               </a>

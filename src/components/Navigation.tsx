@@ -238,7 +238,7 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
                 href="https://hms.harvard.edu/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="block hover:bg-black/30 hover:scale-105 duration-300 rounded-lg p-1"
+                className="block hover:bg-white/10 hover:scale-105 duration-300 rounded-lg p-1"
               >
                 <img 
                   src={medschoolLogoCompact} 
@@ -261,7 +261,7 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
             <select 
               value={activeTab}
               onChange={(e) => onTabChange(e.target.value)}
-              className="bg-slate-900 text-white border border-slate-700 rounded-lg px-3 py-2 shadow-[0_0_10px_#FF0F7B40]"
+              className="bg-white text-[#A51C30] hover:bg-white/90 shadow-[0_0_20px_#A51C3080] rounded-lg px-3 py-2"
             >
               {tabs.map((tab) => (
                 <option key={tab.id} value={tab.id}>{tab.label}</option>

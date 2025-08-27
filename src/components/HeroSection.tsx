@@ -26,7 +26,7 @@ export const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-relaxed tracking-tight pb-4">
             Fighting Cancer & Aging
-            <span className="block mt-4 text-[#ff4164] pb-2 leading-tight">
+            <span className="block mt-4 text-[#ce233c] pb-2 leading-tight">
               with Protein Design & Immunobiology
             </span>
           </h1>
@@ -40,9 +40,9 @@ export const HeroSection = ({ onNavigate }: HeroSectionProps) => {
             <Button 
               size="lg"
               onClick={() => onNavigate('research')} 
-              className="bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent border-2 border-white text-white px-10 py-4 text-lg font-medium group transition-transform duration-300 hover:scale-105"
+              className="bg-transparent hover:bg-white/10 focus:bg-transparent active:bg-transparent border-2 border-white text-white px-10 py-4 text-lg font-medium group transition-transform duration-300 hover:scale-105"
             >
-              <span className="group-hover:text-[#ff4164]">
+              <span className="group-hover:text-[#df4158]">
                 Learn About My Research
               </span>
             </Button>
@@ -50,9 +50,9 @@ export const HeroSection = ({ onNavigate }: HeroSectionProps) => {
             <Button 
               size="lg"
               onClick={() => onNavigate('contact')} 
-              className="bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent border-2 border-white text-white px-10 py-4 text-lg font-medium group transition-transform duration-300 hover:scale-105"
+              className="bg-transparent hover:bg-white/10 focus:bg-transparent active:bg-transparent border-2 border-white text-white px-10 py-4 text-lg font-medium group transition-transform duration-300 hover:scale-105"
             >
-              <span className="group-hover:text-[#ff4164]">
+              <span className="group-hover:text-[#df4158]">
                 Get In Touch
               </span>
             </Button>
