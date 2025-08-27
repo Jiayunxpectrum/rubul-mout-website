@@ -25,13 +25,15 @@ export const ChatBox = ({ isVisible }: ChatBoxProps) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Hello! I'm Dr. Rubul Mout's AI assistant. How can I help you today?",
+      text: "Hello! I'm Dr. Rubul Mout's AI assistant. I can help you with questions about Dr. Mout, or I can automatically send him an email on your behalf. Would you like to send him an email?",
       isUser: false,
       timestamp: new Date(),
     },
   ]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [conversationId, setConversationId] = useState("");
+  const [userId] = useState("user-" + Math.random().toString(36).substr(2, 9));
   const messagesContainerRef = useRef<HTMLDivElement>(null);
 
   const handleSendMessage = async () => {
@@ -59,8 +61,8 @@ export const ChatBox = ({ isVisible }: ChatBoxProps) => {
             inputs: {},
             query: inputValue,
             response_mode: "streaming",
-            conversation_id: "",
-            user: "user-" + Date.now(),
+            conversation_id: conversationId,
+            user: userId,
             files: []
           })
         });
@@ -89,14 +91,20 @@ export const ChatBox = ({ isVisible }: ChatBoxProps) => {
                     const data = line.slice(6);
                     if (data === '[DONE]') break;
                     
-                    try {
-                      const parsed = JSON.parse(data);
-                      console.log('Parsed streaming data:', parsed);
-                      
-                      // Handle different event types
-                      console.log('Event type:', parsed.event, 'Answer:', parsed.answer);
-                      
-                      if (parsed.event === 'agent_message' && parsed.answer) {
+                                         try {
+                       const parsed = JSON.parse(data);
+                       console.log('Parsed streaming data:', parsed);
+                       
+                       // Store conversation ID if we receive it
+                       if (parsed.conversation_id && !conversationId) {
+                         setConversationId(parsed.conversation_id);
+                         console.log('New conversation ID:', parsed.conversation_id);
+                       }
+                       
+                       // Handle different event types
+                       console.log('Event type:', parsed.event, 'Answer:', parsed.answer);
+                       
+                       if (parsed.event === 'agent_message' && parsed.answer) {
                         console.log('Creating/updating message with answer:', parsed.answer);
                         if (!hasStartedResponse) {
                           // Create the AI message when we first get content
@@ -205,12 +213,13 @@ export const ChatBox = ({ isVisible }: ChatBoxProps) => {
   if (!isOpen) {
     return (
       <div className="fixed bottom-6 right-6 z-50">
-        <Button
-          onClick={() => setIsOpen(true)}
-          className="h-14 px-6 rounded-full bg-[#A51C30] hover:bg-[#A51C30]/90 shadow-lg"
-        >
-          Contact Me
-        </Button>
+                 <Button
+           onClick={() => setIsOpen(true)}
+           className="h-14 px-6 rounded-full bg-[#A51C30] hover:bg-[#A51C30]/90 shadow-lg"
+           data-testid="ask-ai-button"
+         >
+           Ask AI
+         </Button>
       </div>
     );
   }

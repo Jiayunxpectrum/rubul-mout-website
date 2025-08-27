@@ -106,7 +106,7 @@ export const ContactTab = () => {
                 )}
                 {/* Add Send Email button underneath the Email section */}
                 {contact.label === "Email" && (
-                  <div className="mt-4">
+                  <div className="mt-4 flex gap-3">
                     <Button 
                       size="default"
                       className="bg-primary hover:bg-primary/90 text-primary-foreground"
@@ -117,11 +117,44 @@ export const ContactTab = () => {
                         Send Email
                       </a>
                     </Button>
+                    <Button 
+                      size="default"
+                      className="bg-[#A51C30] hover:bg-[#A51C30]/90 text-white"
+                      onClick={() => {
+                        // Find and click the Ask AI button to open the chatbox
+                        const askAiButton = document.querySelector('[data-testid="ask-ai-button"]') as HTMLButtonElement;
+                        if (askAiButton) {
+                          askAiButton.click();
+                        }
+                       }}
+                    >
+                      <Mail className="w-4 h-4 mr-2" />
+                      Quick Contact
+                    </Button>
                   </div>
                 )}
               </div>
             </div>
           ))}
+        </CardContent>
+      </Card>
+
+      {/* AI Assistant Note */}
+      <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-6">
+        <CardHeader>
+          <CardTitle className="text-xl text-black">
+            AI Assistant Available
+          </CardTitle>
+          <CardDescription className="text-gray-900">
+            Get instant help and automatically send emails to Dr. Mout
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+                     <p className="text-gray-800">
+             Use the <strong>"Ask AI"</strong> button (bottom right) to get instant answers to your questions 
+             about Dr. Mout's research, publications, or teaching. The AI can also automatically send 
+             Dr. Mout an email with your contact information and inquiry on your behalf.
+           </p>
         </CardContent>
       </Card>
 
