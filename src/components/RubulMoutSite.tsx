@@ -70,7 +70,9 @@ export const RubulMoutSite = () => {
       {/* Background Image - Fixed to viewport for entire site (hidden on research page) */}
       {activeTab !== 'research' && (
         <div 
-          className="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className={`fixed inset-0 bg-cover bg-center bg-no-repeat ${
+            activeTab === 'biography' ? 'opacity-60' : 'opacity-20'
+          }`}
           style={{
             backgroundImage: `url(${proteinMoleculeBg})`,
           }}
