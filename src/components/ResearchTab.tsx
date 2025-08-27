@@ -3,10 +3,47 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import workProteinImg from "@/assets/work-protein-design.jpg";
 import workImmunoageingImg from "@/assets/work-immunoageing.jpg";
+import rubulResearchImg from "@/assets/RubulResearchImg.png";
+import rubulResearchImg2 from "@/assets/RubulResearchImg2.png";
+import rubulResearchImg3 from "@/assets/RubulResearchImg3.png";
 
 export const ResearchTab = () => {
   return (
-    <div className="max-w-6xl mx-auto space-y-16">
+    <div className="min-h-screen bg-gray-900 relative">
+      {/* Background Image 1 - Center image, slightly larger */}
+      <div 
+        className="fixed inset-0 bg-contain bg-center bg-no-repeat opacity-20"
+        style={{
+          backgroundImage: `url(${rubulResearchImg})`,
+          transform: 'scale(0.95)',
+        }}
+      />
+      
+      {/* Background Image 2 - Right side, slightly larger and lower */}
+      <div 
+        className="fixed right-0 top-0 h-full bg-contain bg-right bg-no-repeat opacity-20"
+        style={{
+          backgroundImage: `url(${rubulResearchImg2})`,
+          width: '40%',
+          transform: 'scale(0.95) translateY(10%) translateX(20%)',
+        }}
+      />
+      
+      {/* Background Image 3 - Left side, flipped, slightly larger and lower */}
+      <div 
+        className="fixed left-0 top-0 h-full bg-contain bg-left bg-no-repeat opacity-20"
+        style={{
+          backgroundImage: `url(${rubulResearchImg3})`,
+          width: '40%',
+          transform: 'scale(0.95) scaleX(-1) translateX(40%) translateY(10%)',
+        }}
+      />
+      
+      {/* Fixed Black Overlay - 45% opacity for darker background */}
+      <div className="fixed inset-0 bg-black/45" />
+      
+      {/* Main Content */}
+      <div className="max-w-6xl mx-auto space-y-16 relative z-10">
       {/* Header */}
       <div className="text-center space-y-6 animate-fade-in-up">
         <h1 className="text-5xl font-bold text-white leading-tight">My Research Focus</h1>
@@ -139,7 +176,7 @@ export const ResearchTab = () => {
         <li>Urban Lendahl, Former Nobel Committee Chairman, Karolinska Institutet</li>
         </p>
       </div>
-
+      </div>
     </div>
   );
 };

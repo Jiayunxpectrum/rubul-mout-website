@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import workProteinImg from "@/assets/work-protein-design.jpg";
+import chatgptProteinImg from "@/assets/ChatGPT Image Aug 23, 2025, 02_35_32 PM.png";
 import workStemcellImg from "@/assets/work-stemcell.jpg";
 import workImmunoageingImg from "@/assets/work-immunoageing.jpg";
 
@@ -37,7 +37,7 @@ export const HomeTab = ({ onNavigate }: HomeTabProps) => {
           >
             <div className="aspect-[4/3] relative">
               <img 
-                src={workProteinImg} 
+                src={chatgptProteinImg} 
                 alt="Protein Design" 
                 className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-500"
               />

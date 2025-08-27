@@ -12,6 +12,7 @@ import { BooksTab } from "./BooksTab";
 import { CoursesTab } from "./CoursesTab";
 import { SundayScienceTab } from "./SundayScienceTab";
 import { NewsTab } from "./NewsTab";
+import { ChatBox } from "./ChatBox";
 import proteinMoleculeBg from "@/assets/protein-molecule-ai.png";
 
 
@@ -66,16 +67,20 @@ export const RubulMoutSite = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 relative">
-      {/* Background Image - Fixed to viewport for entire site */}
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{
-          backgroundImage: `url(${proteinMoleculeBg})`,
-        }}
-      />
+      {/* Background Image - Fixed to viewport for entire site (hidden on research page) */}
+      {activeTab !== 'research' && (
+        <div 
+          className="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{
+            backgroundImage: `url(${proteinMoleculeBg})`,
+          }}
+        />
+      )}
       
-      {/* Fixed Black Overlay - 10% opacity for subtle background */}
-      <div className="fixed inset-0 bg-black/10" />
+      {/* Fixed Black Overlay - 10% opacity for subtle background (hidden on research page) */}
+      {activeTab !== 'research' && (
+        <div className="fixed inset-0 bg-black/10" />
+      )}
       
       {/* Navigation */}
       <Navigation activeTab={activeTab} onTabChange={handleTabChange} />
@@ -100,7 +105,7 @@ export const RubulMoutSite = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             {/* Dr. Rubul Mout Section */}
-            <div className="text-center">
+            <div className="text-left">
               <h3 className="font-bold text-lg mb-4 text-[#ff4164]">
                 Dr. Rubul Mout
               </h3>
@@ -110,8 +115,8 @@ export const RubulMoutSite = () => {
               </p>
             </div>
             
-            {/* Quick Links - Centered Section, Left Aligned Text, Narrower Width */}
-            <div className="text-center flex justify-center">
+            {/* Quick Links - Left Aligned Section */}
+            <div className="text-left">
               <div className="w-32">
                 <h4 className="font-bold text-lg mb-4 text-[#ff4164]">
                   Quick Links
@@ -175,8 +180,8 @@ export const RubulMoutSite = () => {
               </div>
             </div>
             
-            {/* External Links - Centered Section, Left Aligned Text, Narrower Width */}
-            <div className="text-center flex justify-center">
+            {/* External Links - Left Aligned Section */}
+            <div className="text-left">
               <div className="w-32">
                 <h4 className="font-bold text-lg mb-4 text-[#ff4164]">
                   External Links
@@ -251,6 +256,9 @@ export const RubulMoutSite = () => {
           </div>
         </div>
       </footer>
+      
+      {/* ChatBox - Only visible on contact page */}
+      <ChatBox isVisible={activeTab === 'contact'} />
     </div>
   );
 };
