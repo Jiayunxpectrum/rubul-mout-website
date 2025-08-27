@@ -178,7 +178,7 @@ export const PublicationsTab = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
+    <div className="min-h-screen">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center animate-fade-in-up">
@@ -191,9 +191,14 @@ export const PublicationsTab = () => {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {publications.map((publication, index) => (
-                <div key={index} className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
+                <div key={index} className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] relative">
+                  <div className="absolute top-4 left-6 z-10">
+                    <span className="text-lg font-bold text-black">
+                      {index + 1}
+                    </span>
+                  </div>
                   <div className="h-full flex flex-col">
-                    <div className="flex-1">
+                    <div className="flex-1 pt-8">
                       <h3 className="text-base font-medium leading-tight mb-4 line-clamp-6 text-black">
                         {(() => {
                           const titleMatch = publication.title.match(/"([^"]+)"/);
@@ -248,9 +253,6 @@ export const PublicationsTab = () => {
                             </a>
                           )}
                         </div>
-                        <span className="text-sm font-bold text-black ml-4">
-                          {index + 1}
-                        </span>
                       </div>
                     </div>
                   </div>
