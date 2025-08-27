@@ -2,21 +2,41 @@ import { ExternalLink } from "lucide-react";
 import proteinMoleculeBg from "@/assets/protein-molecule-ai.png";
 
 export const PublicationsTab = () => {
-  // Function to make "R Mout" bold in citations
+  // Function to make "R Mout" bold and journal names bold in citations
   const makeRubulNameBold = (text: string) => {
     // Replace "R Mout" with bold version, handling various formats
-    const boldRubulName = text.replace(
+    let result = text.replace(
       /(R\s+Mout)/g, 
       '<strong class="font-bold text-black">$1</strong>'
     );
     
     // Also handle variations like "R Mout*", "R Mout#", etc.
-    const boldRubulNameWithSymbols = boldRubulName.replace(
+    result = result.replace(
       /(R\s+Mout[*#])/g, 
       '<strong class="font-bold text-black">$1</strong>'
     );
     
-    return boldRubulNameWithSymbols;
+    // Only bold specific journal names that appear before years
+    const journalNames = [
+      'bioRxiv', 'Nature', 'Cell', 'Proc. Natl. Acad. Sci. U.S.A.', 'Nanoscale', 
+      'Nat commun.', 'Adv. Therap.', 'Bioconjugate Chem.', 'Bio-protocol', 
+      'G.I.T Laboratory Journal', 'ACS Nano', 'J. Am. Chem. Soc.', 'Bioconjug. Chem.', 
+      'Nature Nanotechnol.', 'Nature Chem.', 'ACS Cent. Sci.', 'Macromol. Rapid Commun.', 
+      'Supramol. Chem.', 'Angew. Chem. Int. Ed. Engl.', 'Chem Commun.', 
+      'Isr. J. Chem.', 'J. Inorg. Organomet. Polym. Mater.', 'Chem. Soc. Rev.', 
+      'Adv. Drug. Deliv. Rev.', 'Malar J.', 'Arch. Biochem. Biophys.'
+    ];
+    
+    journalNames.forEach(journal => {
+      const escapedJournal = journal.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      // Handle both "Journal, YYYY" and "Journal YYYY" formats
+      const regex1 = new RegExp(`(${escapedJournal}),\\s+(\\d{4})`, 'g');
+      const regex2 = new RegExp(`(${escapedJournal})\\s+(\\d{4})`, 'g');
+      result = result.replace(regex1, '<strong class="font-bold text-black">$1</strong>, $2');
+      result = result.replace(regex2, '<strong class="font-bold text-black">$1</strong> $2');
+    });
+    
+    return result;
   };
 
   const publications = [
