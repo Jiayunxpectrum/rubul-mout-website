@@ -1,41 +1,19 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import workProteinImg from "@/assets/work-protein-design.jpg";
+import chatgptProteinImg from "@/assets/ChatGPT Image Aug 23, 2025, 02_35_32 PM.png";
 import workImmunoageingImg from "@/assets/work-immunoageing.jpg";
-import rubulResearchImg from "@/assets/RubulResearchImg.png";
-import rubulResearchImg2 from "@/assets/RubulResearchImg2.png";
-import rubulResearchImg3 from "@/assets/RubulResearchImg3.png";
+import cancerTImg from "@/assets/CancerT.png";
+import proteinMoleculeBg from "@/assets/protein-molecule-ai.png";
 
 export const ResearchTab = () => {
   return (
     <div className="min-h-screen bg-gray-900 relative">
-      {/* Background Image 1 - Center image, slightly larger */}
+      {/* Background Image - Same as home page */}
       <div 
-        className="fixed inset-0 bg-contain bg-center bg-no-repeat opacity-20"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-20"
         style={{
-          backgroundImage: `url(${rubulResearchImg})`,
-          transform: 'scale(0.95)',
-        }}
-      />
-      
-      {/* Background Image 2 - Right side, slightly larger and lower */}
-      <div 
-        className="fixed right-0 top-0 h-full bg-contain bg-right bg-no-repeat opacity-20"
-        style={{
-          backgroundImage: `url(${rubulResearchImg2})`,
-          width: '40%',
-          transform: 'scale(0.95) translateY(10%) translateX(20%)',
-        }}
-      />
-      
-      {/* Background Image 3 - Left side, flipped, slightly larger and lower */}
-      <div 
-        className="fixed left-0 top-0 h-full bg-contain bg-left bg-no-repeat opacity-20"
-        style={{
-          backgroundImage: `url(${rubulResearchImg3})`,
-          width: '40%',
-          transform: 'scale(0.95) scaleX(-1) translateX(40%) translateY(10%)',
+          backgroundImage: `url(${proteinMoleculeBg})`,
         }}
       />
       
@@ -78,7 +56,7 @@ export const ResearchTab = () => {
             </div>
             <div className="space-y-4">
               <img 
-                src={workProteinImg} 
+                src={chatgptProteinImg} 
                 alt="Protein Structure Design" 
                 className="w-full h-48 object-cover rounded-lg shadow-lg"
               />
@@ -86,10 +64,10 @@ export const ResearchTab = () => {
           </div>
         </div>
 
-        {/* Immune Cell Function in Cancer */}
+        {/* Boosting Immune Cell Function in Cancer */}
         <div id="immune-cell-cancer" className="space-y-6">
           <h2 className="text-3xl font-bold text-white border-b-2 border-primary pb-2">
-            Immune Cell Function in Cancer
+            Boosting Immune Cell Function in Cancer
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-4">
@@ -113,7 +91,7 @@ export const ResearchTab = () => {
             </div>
             <div className="space-y-4">
               <img 
-                src={workImmunoageingImg} 
+                src={cancerTImg} 
                 alt="Designed protein bridging T cell to cancer cell" 
                 className="w-full h-48 object-cover rounded-lg shadow-lg"
               />
@@ -172,7 +150,7 @@ export const ResearchTab = () => {
       <div className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl hover:shadow-lg backdrop-blur-sm p-8">
         <h2 className="text-3xl text-primary mb-6">Collaborators</h2>
         <p className="text-gray-900 leading-relaxed text-lg">
-        <li>Stephen C. Blacklow, Chair, Department of Biological Chemistry and Molecular Pharmacology</li>
+        <li>Stephen C. Blacklow, Chair, Department of Biological Chemistry and Molecular Pharmacology, Harvard University</li>
         <li>Urban Lendahl, Former Nobel Committee Chairman, Karolinska Institutet</li>
         </p>
       </div>
