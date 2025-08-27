@@ -6,21 +6,18 @@ import rubulPortrait from "@/assets/rubul-portrait.jpg";
 export const BiographyTab = () => {
   const timeline = [
     {
-      year: "Education",
-      title: "PhD at UMass Amherst",
-      description: "Moved to the United States to pursue PhD from the University of Massachusetts, Amherst, developing the 'E-tag' method for intracellular protein delivery.",
+      year: "2017",
+      title: "University of Massachusetts Amherst, PhD in Chemistry",
       icon: GraduationCap
     },
     {
-      year: "2017-2020",
-      title: "University of Washington",
-      description: "Washington Research Foundation Innovation Fellow at the Institute for Protein Design, working with 2024 Nobel Laureate David Baker.",
+      year: "2021",
+      title: "University of Washington, Washington Research Foundation Innovation Fellow",
       icon: Microscope
     },
     {
       year: "Present",
-      title: "Research Fellow - Harvard Medical School",
-      description: "Currently Research Fellow at Harvard Medical School and Boston Children's Hospital, leading groundbreaking research in protein design and developing breakthrough therapies for immune system enhancement.",
+      title: "Harvard Medical School, Research Fellow",
       icon: Award
     }
   ];
@@ -123,34 +120,31 @@ export const BiographyTab = () => {
             <p className="text-gray-900">
               He is also the author of two books in Assamese. He founded Uplift Libraries, an
               initiative to create small-scale libraries for children in rural India, and the founder of
-              Sunday Science Activism, and science outreach program to interact with college and
+              Sunday Science Activism, a science outreach program to interact with college and
               university students from around the world.
             </p>
           </CardContent>
         </Card>
 
-      {/* Timeline */}
-      <section>
-        <h3 className="text-3xl font-bold text-center mb-10 text-white">Career Timeline</h3>
-        <div className="space-y-8">
-          {timeline.map((item, index) => (
-            <div key={index} className="flex items-start gap-6 animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="flex-shrink-0 w-16 h-16 bg-red-900/20 rounded-lg flex items-center justify-center">
-                <item.icon className="w-8 h-8 text-primary" />
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-4 mb-2">
-                  <span className="text-sm font-semibold px-3 py-1 bg-primary/10 text-primary rounded-full">
-                    {item.year}
-                  </span>
-                  <h4 className="text-xl font-semibold text-white">{item.title}</h4>
-                </div>
-                <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+             {/* Timeline */}
+       <section>
+         <h3 className="text-3xl font-bold text-center mb-10 text-white">Career Timeline</h3>
+         <div className="space-y-8">
+           {timeline.map((item, index) => (
+             <div key={index} className="flex items-center gap-6 animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+               <div className="flex-shrink-0 w-16 h-16 bg-primary rounded-lg flex items-center justify-center shadow-lg border-2 border-white/20">
+                 <item.icon className="w-8 h-8 text-white" />
+               </div>
+               <div className="flex items-center gap-6">
+                 <span className="text-xl font-bold px-6 py-3 bg-primary/60 text-white rounded-full whitespace-nowrap shadow-lg border-2 border-white/20">
+                   {item.year}
+                 </span>
+                 <h4 className="text-2xl font-semibold text-white">{item.title}</h4>
+               </div>
+             </div>
+           ))}
+         </div>
+       </section>
 
              {/* Books & Writing */}
        <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-8 md:p-12 hover:shadow-lg">
