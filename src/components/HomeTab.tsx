@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import chatgptProteinImg from "@/assets/ChatGPT Image Aug 23, 2025, 02_35_32 PM.png";
 import workStemcellImg from "@/assets/work-stemcell.jpg";
 import workImmunoageingImg from "@/assets/work-immunoageing.jpg";
+import cancerTImg from "@/assets/CancerT.png";
 
 interface HomeTabProps {
   onNavigate: (tab: string, section?: string) => void;
@@ -71,7 +72,7 @@ export const HomeTab = ({ onNavigate }: HomeTabProps) => {
           >
             <div className="aspect-[4/3] relative">
               <img 
-                src={workStemcellImg} 
+                src={cancerTImg} 
                 alt="Immune Cell Function in Cancer" 
                 className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-500"
               />
@@ -90,7 +91,7 @@ export const HomeTab = ({ onNavigate }: HomeTabProps) => {
             </div>
           </div>
 
-          {/* Immuno-Ageing Card */}
+          {/* Immuno-Aging Card */}
           <div 
             className="relative rounded-3xl overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 opacity-70 backdrop-blur-sm hover:opacity-80"
             onClick={() => onNavigate('research', 'immunology-aging')}
@@ -106,7 +107,7 @@ export const HomeTab = ({ onNavigate }: HomeTabProps) => {
             <div className="aspect-[4/3] relative">
               <img 
                 src={workImmunoageingImg} 
-                alt="Immuno-Ageing" 
+                alt="Immuno-Aging" 
                 className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-500"
               />
               {/* Gradient overlay - default state */}
@@ -116,7 +117,7 @@ export const HomeTab = ({ onNavigate }: HomeTabProps) => {
               
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-8">
-                <h3 className="text-3xl font-bold text-white mb-4">Immuno‑Ageing</h3>
+                <h3 className="text-3xl font-bold text-white mb-4">Immuno‑Aging</h3>
                 <p className="text-white/90 text-lg leading-relaxed">
                   Understanding age-associated immune changes to promote healthier longevity.
                 </p>
