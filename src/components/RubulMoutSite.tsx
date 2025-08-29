@@ -97,14 +97,16 @@ export const RubulMoutSite = () => {
         {renderActiveTab()}
       </main>
       
-      {/* Footer */}
-      <footer className="relative border-t border-gray-800 bg-gray-800 py-12 mt-32">
+                                                       {/* Footer */}
+         <footer className="relative border-t border-gray-800 bg-gray-800 py-12 mt-32 z-[9999]">
+         {/* Solid background overlay to ensure footer is not transparent */}
+         <div className="absolute inset-0 bg-gray-800" />
         {/* Gradient overlay for home page - positioned at top of footer */}
         {activeTab === 'home' && (
           <div className="absolute top-0 left-0 right-0 bg-gradient-to-t from-gray-800 via-gray-800/60 to-transparent pointer-events-none" style={{height: '100px', zIndex: 5}}></div>
         )}
         
-        <div className="container mx-auto px-6 relative z-10">
+                                                                       <div className="container mx-auto px-6 relative z-[10000]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             {/* Dr. Rubul Mout Section */}
             <div className="text-left">
@@ -113,7 +115,7 @@ export const RubulMoutSite = () => {
               </h3>
               <p className="text-gray-300 leading-relaxed text-sm text-left">
                 Research Fellow at Harvard Medical School & Boston Children's Hospital, 
-                advancing protein design and cell biology for therapeutic applications.
+                advancing protein design and immunobiology for therapeutic applications.
               </p>
             </div>
             
