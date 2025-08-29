@@ -8,17 +8,8 @@ import proteinMoleculeBg from "@/assets/protein-molecule-ai.png";
 
 export const ResearchTab = () => {
   return (
-    <div className="min-h-screen bg-gray-900 relative">
-      {/* Background Image - Same as home page */}
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{
-          backgroundImage: `url(${proteinMoleculeBg})`,
-        }}
-      />
+    <div className="min-h-screen relative">
       
-      {/* Fixed Black Overlay - 45% opacity for darker background */}
-      <div className="fixed inset-0 bg-black/45" />
       
       {/* Main Content */}
       <div className="max-w-6xl mx-auto space-y-16 relative z-10">

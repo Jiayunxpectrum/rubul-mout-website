@@ -200,16 +200,7 @@ export const PublicationsTab = () => {
 
   return (
     <div className="min-h-screen relative">
-      {/* Background Image - Increased brightness to match homepage */}
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-70"
-        style={{
-          backgroundImage: `url(${proteinMoleculeBg})`,
-        }}
-      />
       
-      {/* Fixed Black Overlay - Same as homepage */}
-      <div className="fixed inset-0 bg-black/10" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto space-y-12">

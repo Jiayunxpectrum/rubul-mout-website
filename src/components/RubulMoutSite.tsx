@@ -68,7 +68,13 @@ export const RubulMoutSite = () => {
   return (
     <div className="min-h-screen bg-gray-900 relative">
       {/* Background Image - Fixed to viewport for entire site (hidden on research page) */}
-      {activeTab !== 'research' && (
+      <div
+        className={'fixed inset-0 bg-cover bg-center bg-no-repeat opacity-35'}
+        style={{
+          backgroundImage: `url(${proteinMoleculeBg})`,
+        }}
+      />
+      {/*{activeTab !== 'research' && (
         <div 
           className={`fixed inset-0 bg-cover bg-center bg-no-repeat ${
             activeTab === 'biography' ? 'opacity-60' : 'opacity-20'
@@ -80,8 +86,8 @@ export const RubulMoutSite = () => {
       )}
       
       {/* Fixed Black Overlay - 10% opacity for subtle background (hidden on research page) */}
-      {activeTab !== 'research' && (
-        <div className="fixed inset-0 bg-black/10" />
+      {activeTab !== 'home' && (
+        <div className="fixed inset-0 bg-black/15" />
       )}
       
       {/* Navigation */}
@@ -97,7 +103,7 @@ export const RubulMoutSite = () => {
         {renderActiveTab()}
       </main>
       
-                                                       {/* Footer */}
+        {/* Footer */}
          <footer className="relative border-t border-gray-800 bg-gray-800 py-12 mt-32 z-[9999]">
          {/* Solid background overlay to ensure footer is not transparent */}
          <div className="absolute inset-0 bg-gray-800" />
@@ -106,7 +112,7 @@ export const RubulMoutSite = () => {
           <div className="absolute top-0 left-0 right-0 bg-gradient-to-t from-gray-800 via-gray-800/60 to-transparent pointer-events-none" style={{height: '100px', zIndex: 5}}></div>
         )}
         
-                                                                       <div className="container mx-auto px-6 relative z-[10000]">
+        <div className="container mx-auto px-6 relative z-[10000]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             {/* Dr. Rubul Mout Section */}
             <div className="text-left">
