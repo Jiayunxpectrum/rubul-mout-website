@@ -72,7 +72,7 @@ export const BiographyTab = () => {
             <h4 className="text-xl text-gray-300 mb-6">Harvard Medical School & Boston Children's Hospital</h4>
             
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              <em>"From humble beginnings in rural India to groundbreaking research at Harvard Medical School, Dr. Rubul Mout exemplifies the transformative power of science and education. His journey from a poor peasant family to becoming a leading researcher in protein design and cell biology inspires countless students worldwide."</em>
+              <em>"Even just a few years ago, de novo protein design wasn't advanced enough to address meaningful biology. But the field is rapidly evolving, and real problems are being solved. Everything is coming together now."</em> -Rubul Mout, <strong><em>Nature</em></strong>, 636, 263-264 (2024)
             </p>
           </div>
         </div>
