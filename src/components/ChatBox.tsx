@@ -4,9 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, X, Send, Minimize2, Maximize2 } from "lucide-react";
 
-interface ChatBoxProps {
-  isVisible: boolean;
-}
+interface ChatBoxProps {}
 
 interface Message {
   id: number;
@@ -15,11 +13,7 @@ interface Message {
   timestamp: Date;
 }
 
-export const ChatBox = ({ isVisible }: ChatBoxProps) => {
-  // Don't render if not visible
-  if (!isVisible) {
-    return null;
-  }
+export const ChatBox = ({}: ChatBoxProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
