@@ -26,7 +26,7 @@ export const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-relaxed tracking-tight pb-4">
             Fighting Cancer & Aging
-            <span className="block mt-4 text-[#ce233c] pb-2 leading-tight">
+            <span className="block mt-4 text-[#df4158] pb-2 leading-tight">
               with Protein Design & Immunobiology
             </span>
           </h1>
