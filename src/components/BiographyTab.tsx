@@ -87,29 +87,29 @@ export const BiographyTab = () => {
             </p>
             
             <p className="text-gray-900">
-              Born, and educated in India, Dr. Mout moved to the United States to pursue his PhD 
+              Born and educated in India, Dr. Mout moved to the United States to pursue his PhD 
               from the University of Massachusetts, Amherst. Prior to joining Harvard/BCH, he was a Washington 
               Research Foundation Innovation Fellow at the Institute for Protein Design, University of Washington.
             </p>
             
             <p className="text-gray-900">
               At Harvard/BCH, Dr. Mout developed soluble agonists for the Notch signaling pathway for T cell 
-              development and function. These agonists promoted the development of T cells from bone marrow stem 
-              cells and activated the Notch pathway in T cells during vaccination to boost cell-based immunity.
+              development and function. These agonists promote the development of T cells from bone marrow stem 
+              cells and activate the Notch pathway in T cells during vaccination to boost cell-based immunity.
             </p>
             
             <p className="text-gray-900">
               Currently, Dr. Mout uses computational protein design technologies to modulate signaling in immune 
-              development, function, and ageing. The ultimate goal of this research is to enhance T cell function 
+              development, function, and aging. The ultimate goal of this research is to enhance T cell function 
               to better combat cancer, autoimmune diseases, and viral infections.
             </p>
             
             <p className="text-gray-900">
               Dr. Mout is the co-author of 40 research articles and the inventor of numerous
-              technologies in gene editing, protein design, and T-cell engineering with multiple
+              technologies in gene editing, protein design, and T-cell engineering, holding multiple
               patents. During his PhD, he developed a technology for intracellular protein delivery and
               gene editing in mammalian cells, known as the 'E-tag' method, which was published in
-              a series of multiple research papers and an approved patent. His work on protein
+              a series of research papers and an approved patent. His work on protein
               design and Notch signaling in collaboration with his former postdoctoral mentor David
               Baker (2024 Nobel Laureate in Chemistry), George Daley (Dean, Harvard Medical
               School), and others was featured in Nature magazine. In addition, his research has
@@ -118,8 +118,9 @@ export const BiographyTab = () => {
             </p>
             
             <p className="text-gray-900">
-              He is also the author of two books in Assamese. He founded Uplift Libraries, an
-              initiative to create small-scale libraries for children in rural India, and the founder of
+              He is the author of two books in Assamese: <em>Dhuxorotat Xonghoto Shrawan</em> and <em>
+              Moro Eta Sapon Ase</em>. He founded Uplift Libraries, an
+              initiative to create small-scale libraries for children in rural India, as well as
               Sunday Science Activism, a science outreach program to interact with college and
               university students from around the world.
             </p>
