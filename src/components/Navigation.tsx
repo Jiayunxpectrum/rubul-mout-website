@@ -32,7 +32,7 @@ const publicationTabs = [
 
 const teachingTabs = [
   { id: 'teaching', label: 'Overview' },
-
+  { id: 'courses', label: 'Courses' },
   { id: 'sundayScience', label: 'Sunday Science' }
 ];
 
@@ -189,7 +189,7 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
                     variant="ghost"
                     className={cn(
                       "px-6 py-2 transition-all font-medium rounded-lg",
-                      ['teaching', 'sundayscience'].includes(activeTab)
+                      ['teaching', 'courses', 'sundayscience'].includes(activeTab)
                         ? "bg-white text-[#A51C30] hover:bg-white/90 hover:text-[#A51C30] shadow-[0_0_20px_#A51C3080]" 
                         : "text-white hover:bg-white/15 hover:text-white hover:shadow-[0_0_15px_#A51C3060]"
                     )}
