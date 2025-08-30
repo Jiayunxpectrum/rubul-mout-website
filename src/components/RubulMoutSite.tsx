@@ -270,8 +270,8 @@ export const RubulMoutSite = () => {
         </div>
       </footer>
       
-      {/* ChatBox - Only visible on contact page */}
-      <ChatBox isVisible={activeTab === 'contact'} />
+      {/* ChatBox - Visible on every page */}
+      <ChatBox />
     </div>
   );
 };

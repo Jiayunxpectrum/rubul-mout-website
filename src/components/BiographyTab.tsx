@@ -1,9 +1,23 @@
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { GraduationCap, Award, BookOpen, Globe, Microscope, Users, Download } from "lucide-react";
+import { GraduationCap, Award, BookOpen, Globe, Microscope, Users, Download, ChevronDown, ChevronUp } from "lucide-react";
 import rubulPortrait from "@/assets/rubul-portrait.jpg";
 
 export const BiographyTab = () => {
+  const [expandedSections, setExpandedSections] = useState<{[key: string]: boolean}>({
+    mainBio: true,
+    timeline: true,
+    books: true
+  });
+
+  const toggleSection = (section: string) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
+
   const timeline = [
     {
       year: "2017",
@@ -78,58 +92,162 @@ export const BiographyTab = () => {
         </div>
       </div>
 
-      {/* Main Bio */}
-      <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 hover:shadow-lg">
-        <CardContent className="space-y-4 sm:space-y-6 text-base sm:text-lg leading-relaxed">
-          <p className="text-black font-bold">
-            <strong>Dr. Rubul Mout</strong> is a Fellow (Research) at Harvard Medical School, Harvard University, 
-            and the Stem Cell & Regenerative Biology Program, Boston Children's Hospital (BCH).
-          </p>
-          
-          <p className="text-gray-900">
-            Born and educated in India, Dr. Mout moved to the United States to pursue his PhD 
-            from the University of Massachusetts, Amherst. Prior to joining Harvard/BCH, he was a Washington 
-            Research Foundation Innovation Fellow at the Institute for Protein Design, University of Washington.
-          </p>
-          
-          <p className="text-gray-900">
-            At Harvard/BCH, Dr. Mout developed soluble agonists for the Notch signaling pathway for T cell 
-            development and function. These agonists promote the development of T cells from bone marrow stem 
-            cells and activate the Notch pathway in T cells during vaccination to boost cell-based immunity.
-          </p>
-          
-          <p className="text-gray-900">
-            Currently, Dr. Mout uses computational protein design technologies to modulate signaling in immune 
-            development, function, and aging. The ultimate goal of this research is to enhance T cell function 
-            to better combat cancer, autoimmune diseases, and viral infections.
-          </p>
-          
-          <p className="text-gray-900">
-            Dr. Mout is the co-author of 40 research articles and the inventor of numerous
-            technologies in gene editing, protein design, and T-cell engineering, holding multiple
-            patents. During his PhD, he developed a technology for intracellular protein delivery and
-            gene editing in mammalian cells, known as the 'E-tag' method, which was published in
-            a series of research papers and an approved patent. His work on protein
-            design and Notch signaling in collaboration with his former postdoctoral mentor David
-            Baker (2024 Nobel Laureate in Chemistry), George Daley (Dean, Harvard Medical
-            School), and others was featured in Nature magazine. In addition, his research has
-            been featured in numerous media, including a LabTV/NIH minidocumentary and an
-            American Chemical Society (ACS) feature video.
-          </p>
-          
-          <p className="text-gray-900">
-            He is the author of two books in Assamese: <em>Dhuxorotat Xonghoto Shrawan</em> and <em>
-            Moro Eta Sapon Ase</em>. He founded Uplift Libraries, an
-            initiative to create small-scale libraries for children in rural India, as well as
-            Sunday Science Activism, a science outreach program to interact with college and
-            university students from around the world.
-          </p>
-        </CardContent>
-      </Card>
+      {/* Main Bio - Expandable on mobile only */}
+      <div className="lg:hidden">
+        <button
+          onClick={() => toggleSection('mainBio')}
+          className="w-full text-left"
+        >
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg sm:text-xl font-bold text-white border-b-2 border-primary pb-2">Biography</h3>
+            {expandedSections.mainBio ? (
+              <ChevronUp className="h-5 w-5 text-white" />
+            ) : (
+              <ChevronDown className="h-5 w-5 text-white" />
+            )}
+          </div>
+        </button>
+        {expandedSections.mainBio && (
+          <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-4 sm:p-6 mt-2 hover:shadow-lg">
+            <CardContent className="space-y-4 sm:space-y-6 text-base sm:text-lg leading-relaxed">
+              <p className="text-black font-bold">
+                <strong>Dr. Rubul Mout</strong> is a Fellow (Research) at Harvard Medical School, Harvard University, 
+                and the Stem Cell & Regenerative Biology Program, Boston Children's Hospital (BCH).
+              </p>
+              
+              <p className="text-gray-900">
+                Born and educated in India, Dr. Mout moved to the United States to pursue his PhD 
+                from the University of Massachusetts, Amherst. Prior to joining Harvard/BCH, he was a Washington 
+                Research Foundation Innovation Fellow at the Institute for Protein Design, University of Washington.
+              </p>
+              
+              <p className="text-gray-900">
+                At Harvard/BCH, Dr. Mout developed soluble agonists for the Notch signaling pathway for T cell 
+                development and function. These agonists promote the development of T cells from bone marrow stem 
+                cells and activate the Notch pathway in T cells during vaccination to boost cell-based immunity.
+              </p>
+              
+              <p className="text-gray-900">
+                Currently, Dr. Mout uses computational protein design technologies to modulate signaling in immune 
+                development, function, and aging. The ultimate goal of this research is to enhance T cell function 
+                to better combat cancer, autoimmune diseases, and viral infections.
+              </p>
+              
+              <p className="text-gray-900">
+                Dr. Mout is the co-author of 40 research articles and the inventor of numerous
+                technologies in gene editing, protein design, and T-cell engineering, holding multiple
+                patents. During his PhD, he developed a technology for intracellular protein delivery and
+                gene editing in mammalian cells, known as the 'E-tag' method, which was published in
+                a series of research papers and an approved patent. His work on protein
+                design and Notch signaling in collaboration with his former postdoctoral mentor David
+                Baker (2024 Nobel Laureate in Chemistry), George Daley (Dean, Harvard Medical
+                School), and others was featured in Nature magazine. In addition, his research has
+                been featured in numerous media, including a LabTV/NIH minidocumentary and an
+                American Chemical Society (ACS) feature video.
+              </p>
+              
+              <p className="text-gray-900">
+                He is the author of two books in Assamese: <em>Dhuxorotat Xonghoto Shrawan</em> and <em>
+                Moro Eta Sapon Ase</em>. He founded Uplift Libraries, an
+                initiative to create small-scale libraries for children in rural India, as well as
+                Sunday Science Activism, a science outreach program to interact with college and
+                university students from around the world.
+              </p>
+            </CardContent>
+          </Card>
+        )}
+      </div>
 
-      {/* Timeline */}
-      <section>
-        <h3 className="text-3xl font-bold text-center mb-10 text-white">Career Timeline</h3>
+      {/* Main Bio - Desktop version (unchanged) */}
+      <div className="hidden lg:block">
+        <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 hover:shadow-lg">
+          <CardContent className="space-y-4 sm:space-y-6 text-base sm:text-lg leading-relaxed">
+            <p className="text-black font-bold">
+              <strong>Dr. Rubul Mout</strong> is a Fellow (Research) at Harvard Medical School, Harvard University, 
+              and the Stem Cell & Regenerative Biology Program, Boston Children's Hospital (BCH).
+            </p>
+            
+            <p className="text-gray-900">
+              Born and educated in India, Dr. Mout moved to the United States to pursue his PhD 
+              from the University of Massachusetts, Amherst. Prior to joining Harvard/BCH, he was a Washington 
+              Research Foundation Innovation Fellow at the Institute for Protein Design, University of Washington.
+            </p>
+            
+            <p className="text-gray-900">
+              At Harvard/BCH, Dr. Mout developed soluble agonists for the Notch signaling pathway for T cell 
+              development and function. These agonists promote the development of T cells from bone marrow stem 
+              cells and activate the Notch pathway in T cells during vaccination to boost cell-based immunity.
+            </p>
+            
+            <p className="text-gray-900">
+              Currently, Dr. Mout uses computational protein design technologies to modulate signaling in immune 
+              development, function, and aging. The ultimate goal of this research is to enhance T cell function 
+              to better combat cancer, autoimmune diseases, and viral infections.
+            </p>
+            
+            <p className="text-gray-900">
+              Dr. Mout is the co-author of 40 research articles and the inventor of numerous
+              technologies in gene editing, protein design, and T-cell engineering, holding multiple
+              patents. During his PhD, he developed a technology for intracellular protein delivery and
+              gene editing in mammalian cells, known as the 'E-tag' method, which was published in
+              a series of research papers and an approved patent. His work on protein
+              design and Notch signaling in collaboration with his former postdoctoral mentor David
+              Baker (2024 Nobel Laureate in Chemistry), George Daley (Dean, Harvard Medical
+              School), and others was featured in Nature magazine. In addition, his research has
+              been featured in numerous media, including a LabTV/NIH minidocumentary and an
+              American Chemical Society (ACS) feature video.
+            </p>
+            
+            <p className="text-gray-900">
+              He is the author of two books in Assamese: <em>Dhuxorotat Xonghoto Shrawan</em> and <em>
+              Moro Eta Sapon Ase</em>. He founded Uplift Libraries, an
+              initiative to create small-scale libraries for children in rural India, as well as
+              Sunday Science Activism, a science outreach program to interact with college and
+              university students from around the world.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Timeline - Expandable on mobile only */}
+      <div className="lg:hidden">
+        <button
+          onClick={() => toggleSection('timeline')}
+          className="w-full text-left"
+        >
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg sm:text-xl font-bold text-white border-b-2 border-primary pb-2">Career Timeline</h3>
+            {expandedSections.timeline ? (
+              <ChevronUp className="h-5 w-5 text-white" />
+            ) : (
+              <ChevronDown className="h-5 w-5 text-white" />
+            )}
+          </div>
+        </button>
+        {expandedSections.timeline && (
+          <div className="mt-2">
+            <div className="space-y-8">
+              {timeline.map((item, index) => (
+                <div key={index} className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className="flex-shrink-0 w-16 h-16 bg-primary rounded-lg flex items-center justify-center shadow-lg border-2 border-white/20">
+                    <item.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 text-center sm:text-left">
+                    <span className="text-lg sm:text-xl font-bold px-4 sm:px-6 py-2 sm:py-3 bg-primary/60 text-white rounded-full whitespace-nowrap shadow-lg border-2 border-white/20">
+                      {item.year}
+                    </span>
+                    <h4 className="text-xl sm:text-2xl font-semibold text-white">{item.title}</h4>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Timeline - Desktop version (unchanged) */}
+      <section className="hidden lg:block">
+        <h3 className="text-3xl font-bold text-center mb-10 text-white border-b-2 border-primary pb-2">Career Timeline</h3>
         <div className="space-y-8">
           {timeline.map((item, index) => (
             <div key={index} className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
@@ -147,14 +265,56 @@ export const BiographyTab = () => {
         </div>
       </section>
 
-      {/* Books & Writing */}
-      <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 hover:shadow-lg">
+      {/* Books & Writing - Expandable on mobile only */}
+      <div className="lg:hidden">
+        <button
+          onClick={() => toggleSection('books')}
+          className="w-full text-left"
+        >
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg sm:text-xl font-bold text-white border-b-2 border-primary pb-2">Literary Contributions</h3>
+            {expandedSections.books ? (
+              <ChevronUp className="h-5 w-5 text-white" />
+            ) : (
+              <ChevronDown className="h-5 w-5 text-white" />
+            )}
+          </div>
+        </button>
+        {expandedSections.books && (
+          <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-4 sm:p-6 mt-2 hover:shadow-lg">
+            <CardContent className="space-y-4 sm:space-y-6">
+              <div className="flex items-center gap-4 mb-4 sm:mb-6">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <BookOpen className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-black border-b-2 border-primary pb-2">Literary Contributions</h3>
+              </div>
+              
+              <div className="space-y-3 sm:space-y-4 text-gray-900 text-sm sm:text-base">
+                <p>
+                  Dr. Mout is also the author of two books in Assamese, a memoir and a collection of short stories. His memoir depicts his journey from a poor 
+                  peasant's family in a far-remote corner of India, near the Assam-Arunachal border.
+                </p>
+                <p>
+                  The memoir, Moro Eta Sapon Ase, has been an instant bestseller, and since its first publication in 2017 it has 
+                  sold over 50,000 copies (as of January 2025), making it one of the highest-selling books 
+                  in the Assamese language. The book is also included in many school/college/university 
+                  curriculums across Assam.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+      </div>
+
+      {/* Books & Writing - Desktop version (unchanged) */}
+      <Card className="hidden lg:block bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 hover:shadow-lg">
         <CardContent className="space-y-4 sm:space-y-6">
           <div className="flex items-center gap-4 mb-4 sm:mb-6">
             <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
               <BookOpen className="w-6 h-6 text-primary" />
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-black">Literary Contributions</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-black border-b-2 border-primary pb-2">Literary Contributions</h3>
           </div>
           
           <div className="space-y-3 sm:space-y-4 text-gray-900 text-sm sm:text-base">

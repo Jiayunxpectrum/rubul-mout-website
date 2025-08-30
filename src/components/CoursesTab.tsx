@@ -1,10 +1,25 @@
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 export const CoursesTab = () => {
+  const [expandedSections, setExpandedSections] = useState<{[key: string]: boolean}>({
+    immunoEngineering: true,
+    modernMedicine: true
+  });
+
+  const toggleSection = (section: string) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
+
   const initiatives = [
     {
+      id: 'immunoEngineering',
       title: "Immuno-Engineering (CLOSED)",
       description: (
         <>
@@ -14,6 +29,7 @@ export const CoursesTab = () => {
       )
     },
     {
+      id: 'modernMedicine',
       title: "A Six-Week Course on Modern Medicine (CLOSED)",
       description: (
         <>
@@ -60,28 +76,55 @@ export const CoursesTab = () => {
     }
   ];
 
-
   return (
     <div className="min-h-screen bg-gradient-subtle">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto space-y-8 sm:space-y-12">
           {/* Header */}
           <div className="text-center animate-fade-in-up">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">Courses</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 border-b-2 border-primary pb-2">Courses</h2>
             <p className="text-lg sm:text-xl text-muted-foreground px-4">
               Courses designed for college and university students studying science
             </p>
           </div>
 
-          {/* Main Initiatives */}
-          <section>
+          {/* Main Initiatives - Expandable on mobile only */}
+          <div className="lg:hidden space-y-4">
+            {initiatives.map((initiative, index) => (
+              <div key={index}>
+                <button
+                  onClick={() => toggleSection(initiative.id)}
+                  className="w-full text-left"
+                >
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg sm:text-xl font-bold text-foreground break-words border-b-2 border-primary pb-2">{initiative.title}</h3>
+                    {expandedSections[initiative.id] ? (
+                      <ChevronUp className="h-5 w-5 text-foreground" />
+                    ) : (
+                      <ChevronDown className="h-5 w-5 text-foreground" />
+                    )}
+                  </div>
+                </button>
+                {expandedSections[initiative.id] && (
+                  <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-4 sm:p-6 mt-2 hover:shadow-lg">
+                    <CardContent className="p-4 sm:p-6">
+                      <div className="text-base sm:text-lg text-gray-900 break-words">{initiative.description}</div>
+                    </CardContent>
+                  </Card>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Main Initiatives - Desktop version (unchanged) */}
+          <section className="hidden lg:block">
             <div className="space-y-6 sm:space-y-8">
               {initiatives.map((initiative, index) => (
                 <Card key={index} className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl hover:shadow-lg">
                   <CardHeader className="p-4 sm:p-6">
                     <div className="flex items-start gap-4">
                       <div className="flex-1 min-w-0">
-                        <CardTitle className="text-xl sm:text-2xl text-primary break-words">{initiative.title}</CardTitle>
+                        <CardTitle className="text-xl sm:text-2xl text-primary break-words border-b-2 border-primary pb-2">{initiative.title}</CardTitle>
                         <CardDescription className="text-base sm:text-lg text-gray-900 mt-1 break-words">{initiative.description}</CardDescription>
                       </div>
                     </div>
