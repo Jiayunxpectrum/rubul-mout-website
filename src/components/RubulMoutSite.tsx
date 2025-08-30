@@ -9,7 +9,7 @@ import { TeachingTab } from "./TeachingTab";
 import { ContactTab } from "./ContactTab";
 import { PatentsTab } from "./PatentsTab";
 import { BooksTab } from "./BooksTab";
-import { CoursesTab } from "./CoursesTab";
+
 import { SundayScienceTab } from "./SundayScienceTab";
 import { NewsTab } from "./NewsTab";
 import { ChatBox } from "./ChatBox";
@@ -54,8 +54,7 @@ export const RubulMoutSite = () => {
         return <TeachingTab onNavigate={handleTabChange} />;
       case 'contact':
         return <ContactTab />;
-      case 'courses':
-        return <CoursesTab />;
+      
       case 'sundayScience':
         return <SundayScienceTab />;
       case 'news':

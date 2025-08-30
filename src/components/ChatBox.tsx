@@ -210,23 +210,23 @@ export const ChatBox = ({ isVisible }: ChatBoxProps) => {
     }
   };
 
-  if (!isOpen) {
+    if (!isOpen) {
     return (
-      <div className="fixed bottom-6 right-6 z-50">
-                 <Button
-           onClick={() => setIsOpen(true)}
-           className="h-14 px-6 rounded-full bg-[#A51C30] hover:bg-[#A51C30]/90 shadow-lg"
-           data-testid="ask-ai-button"
-         >
-           Ask AI
-         </Button>
+      <div className="fixed bottom-6 right-6 z-[10001]">
+        <Button
+          onClick={() => setIsOpen(true)}
+          className="h-14 px-6 rounded-full bg-[#A51C30] hover:bg-[#A51C30]/90 shadow-lg"
+          data-testid="ask-ai-button"
+        >
+          Ask AI
+        </Button>
       </div>
     );
   }
 
   if (isMinimized) {
     return (
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-6 right-6 z-[10001]">
         <Card className="w-80 shadow-lg bg-white border border-gray-300 overflow-hidden">
           <CardHeader className="pb-2 text-white bg-[#A51C30]">
             <div className="flex items-center justify-between">
@@ -257,7 +257,7 @@ export const ChatBox = ({ isVisible }: ChatBoxProps) => {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-6 right-6 z-[10001]">
       <Card className="w-80 h-96 shadow-lg bg-white border border-gray-300 overflow-hidden">
         <CardHeader className="pb-2 border-b bg-[#A51C30] text-white border-[#A51C30]">
           <div className="flex items-center justify-between">

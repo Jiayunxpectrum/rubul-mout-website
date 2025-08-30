@@ -134,7 +134,7 @@ const publicationTabs = [
 
 const teachingTabs = [
   { id: 'teaching', label: 'Overview' },
-  { id: 'courses', label: 'Courses' },
+
   { id: 'sundayScience', label: 'Sunday Science' }
 ];
 ```
@@ -239,15 +239,13 @@ while (true) {
 **Purpose**: Teaching philosophy and overview  
 **Content**: Teaching approach, methodologies, and educational background
 
-### 9. CoursesTab.tsx
-**Purpose**: Course offerings and syllabi  
-**Content**: Course descriptions, schedules, and materials
 
-### 10. SundayScienceTab.tsx
+
+### 9. SundayScienceTab.tsx
 **Purpose**: Sunday Science initiative and outreach  
 **Content**: Science communication, public engagement, and educational outreach
 
-### 11. ContactTab.tsx
+### 10. ContactTab.tsx
 **Purpose**: Contact information and communication  
 **Content**: Email, office location, social media, and contact form
 

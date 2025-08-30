@@ -1,0 +1,21 @@
+{
+  "name": "Dr. Rubul Mout - Harvard Medical School",
+  "short_name": "Dr. Rubul Mout",
+  "description": "Research Fellow at Harvard Medical School & Boston Children's Hospital",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#A51C30",
+  "theme_color": "#A51C30",
+  "icons": [
+    {
+      "src": "/harvard-crest.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/harvard-crest.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -5,21 +5,25 @@ import Book from "@/assets/Book.jpg";
 const books = [
   {
     title: "Dhuxorotat Xonghoto Shrawan",
+    assameseTitle: "(ধূসৰতাত সংহত শ্ৰৱণ)",
     author: "Rubul Mout",
     year: "2015",
     language: "Assamese",
     description: "A collection of short stories.",
     imageUrl: Book,
-    link: "https://www.amazon.com/dp/example1"
+    link: null,
+    available: false
   },
   {
     title: "Moro Eta Sapon Ase",
+    assameseTitle: "(মোৰো এটা সপোন আছে)",
     author: "Rubul Mout",
     year: "2017",
     language: "Assamese",
     description: "A bestselling memoir depicting Dr. Mout's journey from a poor peasant family in rural Assam to Harvard Medical School. Over 50,000 copies have been sold.",
     imageUrl: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1595491894i/54645343.jpg",
-    link: "https://www.goodreads.com/book/show/54645343-moro-eata-sapon-ase"
+    link: "https://www.goodreads.com/book/show/54645343-moro-eata-sapon-ase",
+    available: true
   }
   
 ];
@@ -51,14 +55,20 @@ export const BooksTab = () => {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-bold text-black mb-2">
-                        <a 
-                          href={book.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-primary hover:text-primary-glow transition-colors link-underline text-lg"
-                        >
-                          {book.title}
-                        </a>
+                        {book.available ? (
+                          <a 
+                            href={book.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-primary-glow transition-colors link-underline text-lg"
+                          >
+                            {book.title} {book.assameseTitle}
+                          </a>
+                        ) : (
+                          <span className="text-black text-lg">
+                            {book.title} {book.assameseTitle} (Currently Unavailable)
+                          </span>
+                        )}
                       </h3>
                       <div className="flex items-center gap-4 text-sm text-gray-700 mb-3">
                         <span>by {book.author}</span>
