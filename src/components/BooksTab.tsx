@@ -46,11 +46,11 @@ export const BooksTab = () => {
               {books.map((book, index) => (
                 <div key={index} className="border-b border-border/30 pb-4 sm:pb-6 last:border-b-0">
                   <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                    <div className="w-full sm:w-32 md:w-40 h-48 sm:h-56 md:h-60 rounded overflow-hidden flex-shrink-0 mx-auto sm:mx-0">
+                    <div className="w-full sm:w-32 md:w-40 h-auto rounded overflow-hidden flex-shrink-0 mx-auto sm:mx-0">
                       <img 
                         src={book.imageUrl}
                         alt={`Cover of ${book.title}`} 
-                        className="w-full h-full object-cover"
+                        className="w-full h-auto object-contain"
                       />
                     </div>
                     <div className="flex-1 min-w-0">

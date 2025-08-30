@@ -33,14 +33,14 @@ export const BiographyTab = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto space-y-12">
+    <div className="max-w-6xl mx-auto space-y-12 px-4 sm:px-6">
       {/* Header with Portrait */}
       <div className="text-center animate-fade-in-up">
-        <div className="flex flex-col lg:flex-row items-start gap-12 mb-12">
-          {/* Portrait */}
-          <div className="flex justify-center lg:justify-start">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 sm:gap-12 mb-8 sm:mb-12">
+          {/* Portrait - Centered on mobile, left-aligned on large screens */}
+          <div className="flex justify-center lg:justify-start w-full lg:w-auto">
             <div className="relative">
-              <div className="w-72 h-72 rounded-full overflow-hidden border-4 border-[#C41E3A]/50 shadow-2xl bg-gradient-to-br from-[#C41E3A]/20 to-[#C41E3A]/10 p-2">
+              <div className="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-[#C41E3A]/50 shadow-2xl bg-gradient-to-br from-[#C41E3A]/20 to-[#C41E3A]/10 p-2">
                 <img 
                   src={rubulPortrait} 
                   alt="Dr. Rubul Mout" 
@@ -56,7 +56,7 @@ export const BiographyTab = () => {
                   href="/cv-rubul-mout.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-300 border border-white/20 hover:border-white/40"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-3 sm:px-4 py-2 rounded-lg font-medium transition-colors duration-300 border border-white/20 hover:border-white/40 text-sm sm:text-base"
                 >
                   <Download className="w-4 h-4" />
                   View CV
@@ -65,112 +65,112 @@ export const BiographyTab = () => {
             </div>
           </div>
           
-          {/* Text Content */}
-          <div className="flex-1 text-center lg:text-left">
-            <h2 className="text-5xl font-bold text-white mb-6">Dr. Rubul Mout</h2>
-            <h3 className="text-2xl font-semibold text-white mb-4">Research Fellow</h3>
-            <h4 className="text-xl text-gray-300 mb-6">Harvard Medical School & Boston Children's Hospital</h4>
+          {/* Text Content - Centered on mobile, left-aligned on large screens */}
+          <div className="flex-1 text-center lg:text-left min-w-0 max-w-full lg:max-w-none">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">Dr. Rubul Mout</h2>
+            <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 sm:mb-4">Research Fellow</h3>
+            <h4 className="text-lg sm:text-xl text-gray-300 mb-4 sm:mb-6">Harvard Medical School & Boston Children's Hospital</h4>
             
-            <p className="text-lg text-gray-300 leading-relaxed mb-6">
+            <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-4 sm:mb-6 px-4 lg:px-0">
               <em>"Even just a few years ago, de novo protein design wasn't advanced enough to address meaningful biology. But the field is rapidly evolving, and real problems are being solved. Everything is coming together now."</em> -Rubul Mout, <strong><em>Nature</em></strong>, 636, 263-264 (2024)
             </p>
           </div>
         </div>
       </div>
 
-                           {/* Main Bio */}
-        <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-8 md:p-12 hover:shadow-lg">
-          <CardContent className="space-y-6 text-lg leading-relaxed">
-            <p className="text-black font-bold">
-              <strong>Dr. Rubul Mout</strong> is a Fellow (Research) at Harvard Medical School, Harvard University, 
-              and the Stem Cell & Regenerative Biology Program, Boston Children's Hospital (BCH).
-            </p>
-            
-            <p className="text-gray-900">
-              Born and educated in India, Dr. Mout moved to the United States to pursue his PhD 
-              from the University of Massachusetts, Amherst. Prior to joining Harvard/BCH, he was a Washington 
-              Research Foundation Innovation Fellow at the Institute for Protein Design, University of Washington.
-            </p>
-            
-            <p className="text-gray-900">
-              At Harvard/BCH, Dr. Mout developed soluble agonists for the Notch signaling pathway for T cell 
-              development and function. These agonists promote the development of T cells from bone marrow stem 
-              cells and activate the Notch pathway in T cells during vaccination to boost cell-based immunity.
-            </p>
-            
-            <p className="text-gray-900">
-              Currently, Dr. Mout uses computational protein design technologies to modulate signaling in immune 
-              development, function, and aging. The ultimate goal of this research is to enhance T cell function 
-              to better combat cancer, autoimmune diseases, and viral infections.
-            </p>
-            
-            <p className="text-gray-900">
-              Dr. Mout is the co-author of 40 research articles and the inventor of numerous
-              technologies in gene editing, protein design, and T-cell engineering, holding multiple
-              patents. During his PhD, he developed a technology for intracellular protein delivery and
-              gene editing in mammalian cells, known as the 'E-tag' method, which was published in
-              a series of research papers and an approved patent. His work on protein
-              design and Notch signaling in collaboration with his former postdoctoral mentor David
-              Baker (2024 Nobel Laureate in Chemistry), George Daley (Dean, Harvard Medical
-              School), and others was featured in Nature magazine. In addition, his research has
-              been featured in numerous media, including a LabTV/NIH minidocumentary and an
-              American Chemical Society (ACS) feature video.
-            </p>
-            
-            <p className="text-gray-900">
-              He is the author of two books in Assamese: <em>Dhuxorotat Xonghoto Shrawan</em> and <em>
-              Moro Eta Sapon Ase</em>. He founded Uplift Libraries, an
-              initiative to create small-scale libraries for children in rural India, as well as
-              Sunday Science Activism, a science outreach program to interact with college and
-              university students from around the world.
-            </p>
-          </CardContent>
-        </Card>
+      {/* Main Bio */}
+      <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 hover:shadow-lg">
+        <CardContent className="space-y-4 sm:space-y-6 text-base sm:text-lg leading-relaxed">
+          <p className="text-black font-bold">
+            <strong>Dr. Rubul Mout</strong> is a Fellow (Research) at Harvard Medical School, Harvard University, 
+            and the Stem Cell & Regenerative Biology Program, Boston Children's Hospital (BCH).
+          </p>
+          
+          <p className="text-gray-900">
+            Born and educated in India, Dr. Mout moved to the United States to pursue his PhD 
+            from the University of Massachusetts, Amherst. Prior to joining Harvard/BCH, he was a Washington 
+            Research Foundation Innovation Fellow at the Institute for Protein Design, University of Washington.
+          </p>
+          
+          <p className="text-gray-900">
+            At Harvard/BCH, Dr. Mout developed soluble agonists for the Notch signaling pathway for T cell 
+            development and function. These agonists promote the development of T cells from bone marrow stem 
+            cells and activate the Notch pathway in T cells during vaccination to boost cell-based immunity.
+          </p>
+          
+          <p className="text-gray-900">
+            Currently, Dr. Mout uses computational protein design technologies to modulate signaling in immune 
+            development, function, and aging. The ultimate goal of this research is to enhance T cell function 
+            to better combat cancer, autoimmune diseases, and viral infections.
+          </p>
+          
+          <p className="text-gray-900">
+            Dr. Mout is the co-author of 40 research articles and the inventor of numerous
+            technologies in gene editing, protein design, and T-cell engineering, holding multiple
+            patents. During his PhD, he developed a technology for intracellular protein delivery and
+            gene editing in mammalian cells, known as the 'E-tag' method, which was published in
+            a series of research papers and an approved patent. His work on protein
+            design and Notch signaling in collaboration with his former postdoctoral mentor David
+            Baker (2024 Nobel Laureate in Chemistry), George Daley (Dean, Harvard Medical
+            School), and others was featured in Nature magazine. In addition, his research has
+            been featured in numerous media, including a LabTV/NIH minidocumentary and an
+            American Chemical Society (ACS) feature video.
+          </p>
+          
+          <p className="text-gray-900">
+            He is the author of two books in Assamese: <em>Dhuxorotat Xonghoto Shrawan</em> and <em>
+            Moro Eta Sapon Ase</em>. He founded Uplift Libraries, an
+            initiative to create small-scale libraries for children in rural India, as well as
+            Sunday Science Activism, a science outreach program to interact with college and
+            university students from around the world.
+          </p>
+        </CardContent>
+      </Card>
 
-             {/* Timeline */}
-       <section>
-         <h3 className="text-3xl font-bold text-center mb-10 text-white">Career Timeline</h3>
-         <div className="space-y-8">
-           {timeline.map((item, index) => (
-             <div key={index} className="flex items-center gap-6 animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
-               <div className="flex-shrink-0 w-16 h-16 bg-primary rounded-lg flex items-center justify-center shadow-lg border-2 border-white/20">
-                 <item.icon className="w-8 h-8 text-white" />
-               </div>
-               <div className="flex items-center gap-6">
-                 <span className="text-xl font-bold px-6 py-3 bg-primary/60 text-white rounded-full whitespace-nowrap shadow-lg border-2 border-white/20">
-                   {item.year}
-                 </span>
-                 <h4 className="text-2xl font-semibold text-white">{item.title}</h4>
-               </div>
-             </div>
-           ))}
-         </div>
-       </section>
-
-             {/* Books & Writing */}
-       <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-8 md:p-12 hover:shadow-lg">
-         <CardContent className="space-y-6">
-                                   <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-primary" />
+      {/* Timeline */}
+      <section>
+        <h3 className="text-3xl font-bold text-center mb-10 text-white">Career Timeline</h3>
+        <div className="space-y-8">
+          {timeline.map((item, index) => (
+            <div key={index} className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div className="flex-shrink-0 w-16 h-16 bg-primary rounded-lg flex items-center justify-center shadow-lg border-2 border-white/20">
+                <item.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-black">Literary Contributions</h3>
+              <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 text-center sm:text-left">
+                <span className="text-lg sm:text-xl font-bold px-4 sm:px-6 py-2 sm:py-3 bg-primary/60 text-white rounded-full whitespace-nowrap shadow-lg border-2 border-white/20">
+                  {item.year}
+                </span>
+                <h4 className="text-xl sm:text-2xl font-semibold text-white">{item.title}</h4>
+              </div>
             </div>
-           
-           <div className="space-y-4 text-gray-900">
-             <p>
-               Dr. Mout is also the author of two books in Assamese, a memoir and a collection of short stories. His memoir depicts his journey from a poor 
-               peasant's family in a far-remote corner of India, near the Assam-Arunachal border.
-             </p>
-             <p>
-               The memoir, Moro Eta Sapon Ase, has been an instant bestseller, and since its first publication in 2017 it has 
-               sold over 50,000 copies (as of January 2025), making it one of the highest-selling books 
-               in the Assamese language. The book is also included in many school/college/university 
-               curriculums across Assam.
-             </p>
-           </div>
-         </CardContent>
-       </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Books & Writing */}
+      <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 hover:shadow-lg">
+        <CardContent className="space-y-4 sm:space-y-6">
+          <div className="flex items-center gap-4 mb-4 sm:mb-6">
+            <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+              <BookOpen className="w-6 h-6 text-primary" />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold text-black">Literary Contributions</h3>
+          </div>
+          
+          <div className="space-y-3 sm:space-y-4 text-gray-900 text-sm sm:text-base">
+            <p>
+              Dr. Mout is also the author of two books in Assamese, a memoir and a collection of short stories. His memoir depicts his journey from a poor 
+              peasant's family in a far-remote corner of India, near the Assam-Arunachal border.
+            </p>
+            <p>
+              The memoir, Moro Eta Sapon Ase, has been an instant bestseller, and since its first publication in 2017 it has 
+              sold over 50,000 copies (as of January 2025), making it one of the highest-selling books 
+              in the Assamese language. The book is also included in many school/college/university 
+              curriculums across Assam.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 };

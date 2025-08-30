@@ -37,20 +37,20 @@ export const ContactTab = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto space-y-12">
+    <div className="max-w-4xl mx-auto space-y-8 sm:space-y-12 px-4 sm:px-6">
       {/* Header */}
       <div className="text-center animate-fade-in-up">
-        <h2 className="text-5xl font-bold text-white mb-4">Contact</h2>
-        <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">Contact</h2>
+        <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
           I'm always interested in meaningful collaborations, research opportunities, and 
           discussions about advancing science education. Feel free to reach out.
         </p>
       </div>
 
       {/* Contact Information */}
-      <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-6 hover:shadow-lg">
-        <CardHeader>
-          <CardTitle className="text-2xl text-black">
+      <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-4 sm:p-6 hover:shadow-lg">
+        <CardHeader className="p-4 sm:p-6">
+          <CardTitle className="text-xl sm:text-2xl text-black">
             Contact Information
           </CardTitle>
           <CardDescription className="text-gray-900">
@@ -58,30 +58,30 @@ export const ContactTab = () => {
           </CardDescription>
         </CardHeader>
         
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
           {contactInfo.map((contact, index) => (
-            <div key={index} className="flex items-start gap-4 p-4 bg-primary/10 rounded-lg">
-              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <contact.icon className="w-6 h-6 text-primary" />
+            <div key={index} className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-primary/10 rounded-lg">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <contact.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
               </div>
-              <div className="flex-1">
-                <h4 className="font-semibold text-gray-900 mb-1">{contact.label}</h4>
+              <div className="flex-1 min-w-0">
+                <h4 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">{contact.label}</h4>
                 {contact.link ? (
                   <a 
                     href={contact.link}
-                    className="text-primary hover:text-primary-glow transition-colors link-underline text-lg"
+                    className="text-primary hover:text-primary-glow transition-colors link-underline text-base sm:text-lg break-all"
                   >
                     {contact.value}
                   </a>
                 ) : contact.links ? (
-                  <div className="text-gray-900 text-lg">
+                  <div className="text-gray-900 text-base sm:text-lg">
                     {contact.links.map((link, linkIndex) => (
                       <span key={linkIndex}>
                         <a 
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-primary hover:text-primary-glow transition-colors link-underline"
+                          className="text-primary hover:text-primary-glow transition-colors link-underline break-words"
                         >
                           {link.text}
                         </a>
@@ -94,32 +94,32 @@ export const ContactTab = () => {
                     href={contact.mapLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-primary-glow transition-colors link-underline text-lg"
+                    className="text-primary hover:text-primary-glow transition-colors link-underline text-base sm:text-lg break-words"
                   >
                     {contact.value}
                   </a>
                 ) : (
-                  <p className="text-foreground text-lg">{contact.value}</p>
+                  <p className="text-foreground text-base sm:text-lg">{contact.value}</p>
                 )}
                 {contact.description && (
-                  <p className="text-gray-800 text-sm mt-1">{contact.description}</p>
+                  <p className="text-gray-800 text-xs sm:text-sm mt-1">{contact.description}</p>
                 )}
                 {/* Add Send Email button underneath the Email section */}
                 {contact.label === "Email" && (
-                  <div className="mt-4 flex gap-3">
+                  <div className="mt-4 flex flex-col sm:flex-row gap-2 sm:gap-3">
                     <Button 
                       size="default"
-                      className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                      className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto px-2 sm:px-3 md:px-4 text-xs sm:text-sm"
                       asChild
                     >
-                      <a href="mailto:rubul.mout@childrens.harvard.edu" className="flex items-center gap-2">
-                        <Mail className="w-4 h-4" />
-                        Send Email
+                      <a href="mailto:rubul.mout@childrens.harvard.edu" className="flex items-center justify-center gap-1 sm:gap-2">
+                        <Mail className="w-3 h-3 sm:w-4 sm:h-4" />
+                        <span className="whitespace-nowrap">Send Email</span>
                       </a>
                     </Button>
                     <Button 
                       size="default"
-                      className="bg-[#A51C30] hover:bg-[#A51C30]/90 text-white"
+                      className="bg-[#A51C30] hover:bg-[#A51C30]/90 text-white w-full sm:w-auto px-2 sm:px-3 md:px-4 text-xs sm:text-sm"
                       onClick={() => {
                         // Find and click the Ask AI button to open the chatbox
                         const askAiButton = document.querySelector('[data-testid="ask-ai-button"]') as HTMLButtonElement;
@@ -128,8 +128,8 @@ export const ContactTab = () => {
                         }
                        }}
                     >
-                      <Mail className="w-4 h-4 mr-2" />
-                      Quick Contact
+                      <Mail className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                      <span className="whitespace-nowrap">Quick Contact</span>
                     </Button>
                   </div>
                 )}
@@ -140,17 +140,17 @@ export const ContactTab = () => {
       </Card>
 
       {/* AI Assistant Note */}
-      <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-6">
-        <CardHeader>
-          <CardTitle className="text-xl text-black">
+      <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-4 sm:p-6">
+        <CardHeader className="p-4 sm:p-6">
+          <CardTitle className="text-lg sm:text-xl text-black">
             AI Assistant Available
           </CardTitle>
           <CardDescription className="text-gray-900">
             Get instant help and automatically send emails to Dr. Mout
           </CardDescription>
         </CardHeader>
-        <CardContent>
-                     <p className="text-gray-800">
+        <CardContent className="p-4 sm:p-6">
+                     <p className="text-gray-800 text-sm sm:text-base">
              Use the <strong>"Ask AI"</strong> button (bottom right) to get instant answers to your questions 
              about Dr. Mout's research, publications, or teaching. The AI can also automatically send 
              Dr. Mout an email with your contact information and inquiry on your behalf.
@@ -159,8 +159,8 @@ export const ContactTab = () => {
       </Card>
 
       {/* Office Hours Note */}
-      <div className="text-center text-muted-foreground">
-        <p className="text-sm">
+      <div className="text-center text-muted-foreground px-4">
+        <p className="text-xs sm:text-sm">
           <strong>Note:</strong> Due to the nature of scientific research and international collaborations, 
           I maintain flexible communication hours. Please allow adequate time for thoughtful responses 
           to complex research inquiries.

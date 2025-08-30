@@ -258,95 +258,85 @@ export const ChatBox = ({ isVisible }: ChatBoxProps) => {
 
   return (
     <div className="fixed bottom-6 right-6 z-[10001]">
-      <Card className="w-80 h-96 shadow-lg bg-white border border-gray-300 overflow-hidden">
-        <CardHeader className="pb-2 border-b bg-[#A51C30] text-white border-[#A51C30]">
-          <div className="flex items-center justify-between">
-            <CardTitle className="text-lg">Chat Assistant</CardTitle>
-            <div className="flex gap-1">
+      {/* Chat Window */}
+      {isOpen && !isMinimized && (
+        <div className="fixed bottom-20 right-4 sm:right-6 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl h-96 sm:h-[28rem] md:h-[32rem] lg:h-[36rem] xl:h-[40rem] bg-white rounded-t-2xl shadow-2xl border border-gray-200 z-[10001] flex flex-col">
+          {/* Header */}
+          <div className="flex items-center justify-between p-4 bg-primary text-white rounded-t-2xl">
+            <h3 className="font-semibold text-sm sm:text-base">AI Assistant</h3>
+            <div className="flex items-center gap-2">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsMinimized(true)}
-                className="h-6 w-6 p-0"
+                className="h-8 w-8 p-0 text-white hover:bg-white/20"
               >
-                <Minimize2 className="h-3 w-3" />
+                <Minimize2 className="h-4 w-4" />
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsOpen(false)}
-                className="h-6 w-6 p-0"
+                className="h-8 w-8 p-0 text-white hover:bg-white/20"
               >
-                <X className="h-3 w-3" />
+                <X className="h-4 w-4" />
               </Button>
             </div>
           </div>
-        </CardHeader>
-        
-        <div className="flex flex-col h-80">
-          {/* Messages Area - Fixed height with scroll */}
-          <div 
-            ref={messagesContainerRef}
-            className="flex-1 p-3 overflow-y-auto bg-white"
-            style={{ maxHeight: '280px' }}
-          >
-            <div className="space-y-2">
-              {messages.map((message) => (
+
+          {/* Messages */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-4" ref={messagesContainerRef}>
+            {messages.map((message) => (
+              <div
+                key={message.id}
+                className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
+              >
                 <div
-                  key={message.id}
-                  className={`flex ${message.isUser ? "justify-end" : "justify-start"}`}
+                  className={`max-w-[80%] rounded-2xl px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base ${
+                    message.isUser
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-gray-100 text-gray-900'
+                  }`}
                 >
-                  <div
-                    className={`max-w-[80%] rounded-lg px-3 py-2 text-sm break-words ${
-                      message.isUser
-                        ? "bg-red-800 text-white"
-                        : "bg-gray-200 text-gray-800"
-                    }`}
-                  >
-                    {message.text}
+                  {message.text}
+                </div>
+              </div>
+            ))}
+            {isLoading && (
+              <div className="flex justify-start">
+                <div className="bg-gray-100 text-gray-900 rounded-2xl px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base">
+                  <div className="flex items-center gap-2">
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-600"></div>
+                    <span>AI is thinking...</span>
                   </div>
                 </div>
-              ))}
-              {isLoading && (
-                <div className="flex justify-start">
-                  <div className="max-w-[80%] rounded-lg px-3 py-2 text-sm bg-gray-200 text-gray-800">
-                    <div className="flex items-center gap-2">
-                      <div className="h-4 w-4 animate-spin rounded-full border-2 border-gray-600 border-t-transparent" />
-                      Thinking...
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
-          
-          {/* Input Area - Always visible at bottom */}
-          <div className="p-3 border-t bg-white">
+
+          {/* Input */}
+          <div className="p-3 sm:p-4 border-t border-gray-200">
             <div className="flex gap-2">
               <Input
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                onKeyPress={handleKeyPress}
+                onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                 placeholder="Type your message..."
-                className="flex-1 bg-gray-200 text-black placeholder-black/70 border-0"
+                className="flex-1 text-sm sm:text-base"
                 disabled={isLoading}
               />
               <Button
                 onClick={handleSendMessage}
+                disabled={!inputValue.trim() || isLoading}
                 size="sm"
-                className="bg-[#A51C30] hover:bg-[#A51C30]/90 text-white"
-                disabled={isLoading}
+                className="px-3 sm:px-4"
               >
-                {isLoading ? (
-                  <div className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
-                ) : (
-                  <Send className="h-4 w-4" />
-                )}
+                <Send className="h-4 w-4" />
               </Button>
             </div>
           </div>
         </div>
-      </Card>
+      )}
     </div>
   );
 };
