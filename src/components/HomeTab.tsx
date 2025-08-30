@@ -128,100 +128,48 @@ export const HomeTab = ({ onNavigate }: HomeTabProps) => {
         </div>
       </section>
 
-      {/* Research Projects */}
-      <section className="space-y-8 sm:space-y-12 px-4 sm:px-6">
-        <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 sm:mb-8">
-            Featured Research Projects
-          </h2>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
-          {/* Stem Cell Research */}
-          <Card 
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 cursor-pointer group"
-            onClick={() => onNavigate('research')}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                onNavigate('research');
-              }
-            }}
-          >
-            <div className="aspect-[4/3] relative overflow-hidden rounded-t-2xl">
-              <img 
-                src={workStemcellImg} 
-                alt="Stem Cell Research" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            </div>
-            <CardContent className="p-4 sm:p-6">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Stem Cell & Regenerative Biology</h3>
-              <p className="text-gray-300 text-sm sm:text-base mb-4">
-                Advancing our understanding of stem cell biology and developing regenerative therapies.
-              </p>
-              <div className="flex items-center text-primary group-hover:text-primary-glow transition-colors">
-                <span className="text-sm font-medium">Learn More</span>
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Publications */}
-          <Card 
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 cursor-pointer group"
-            onClick={() => onNavigate('publications')}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                onNavigate('publications');
-              }
-            }}
-          >
-            <CardContent className="p-4 sm:p-6 h-full flex flex-col justify-center">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <BookOpen className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Publications & Research</h3>
-                <p className="text-gray-300 text-sm sm:text-base mb-4">
-                  Explore my published research in leading scientific journals and conferences.
-                </p>
-                <div className="flex items-center justify-center text-primary group-hover:text-primary-glow transition-colors">
-                  <span className="text-sm font-medium">View Publications</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Quick Actions */}
-      <section className="text-center space-y-6 sm:space-y-8 px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-          Get Started
-        </h2>
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-          <Button 
-            size="lg"
-            onClick={() => onNavigate('biography')} 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium transition-transform duration-300 hover:scale-105"
-          >
-            Learn About Me
-          </Button>
-          <Button 
-            size="lg"
-            onClick={() => onNavigate('contact')} 
-            className="bg-transparent hover:bg-white/10 border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium transition-transform duration-300 hover:scale-105"
-          >
-            Get In Touch
-          </Button>
+       {/* Call to Action */}
+       <section className="py-16 text-center">
+        <div className="max-w-4xl mx-auto bg-[#A51C30]/50 rounded-3xl p-12 border border-[#A51C30]/30 backdrop-blur-sm shadow-[0_0_30px_#A51C3060]">
+          <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Interested in Collaboration?
+          </h3>
+          <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
+            I'm always open to discussing research opportunities, scientific collaborations, 
+            or speaking engagements in protein design and cell biology.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button 
+              size="lg"
+              onClick={() => onNavigate('contact')}
+              className="bg-black/50 hover:bg-white/10 focus:bg-black active:bg-black border-2 border-white text-white px-8 py-4 text-lg font-medium group transition-transform duration-300 hover:scale-105"
+            >
+              <span className="group-hover:text-white">
+                Get In Touch
+                
+              </span>
+            </Button>
+            
+            <Button 
+              size="lg"
+              onClick={() => onNavigate('publications')}
+              className="bg-black/50 hover:bg-white/10 focus:bg-black active:bg-black border-2 border-white text-white px-8 py-4 text-lg font-medium group transition-transform duration-300 hover:scale-105"
+            >
+              <span className="group-hover:text-white">
+                View Publications
+              </span>
+            </Button>
+            
+            <Button 
+              size="lg"
+              onClick={() => onNavigate('teaching')}
+              className="bg-black/50 hover:bg-white/10 focus:bg-black active:bg-black border-2 border-white text-white px-8 py-4 text-lg font-medium group transition-transform duration-300 hover:scale-105"
+            >
+              <span className="group-hover:text-white">
+                Join Science Activism
+              </span>
+            </Button>
+          </div>
         </div>
       </section>
     </div>
