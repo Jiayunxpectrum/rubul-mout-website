@@ -13,7 +13,6 @@ export const ResearchTab = () => {
     proteinDesign: true,
     immuneCellCancer: true,
     immunologyAging: true,
-    researchImpact: true,
     callToAction: true
   });
 
@@ -214,64 +213,41 @@ export const ResearchTab = () => {
           </div>
         </section>
 
-        {/* Research Impact */}
+        {/* Mentors & Collaborators */}
         <section className="space-y-6 sm:space-y-8">
-          {/* Mobile Collapsible Header */}
-          <div className="lg:hidden">
-            <button
-              onClick={() => toggleSection('researchImpact')}
-              className="w-full text-left"
-            >
-              <div className="flex items-center justify-between">
-                <h2 className="text-2xl sm:text-3xl font-bold text-white text-center border-b-2 border-primary pb-2">
-                  Research Impact & Applications
-                </h2>
-                {expandedSections.researchImpact ? (
-                  <ChevronUp className="h-6 w-6 text-white" />
-                ) : (
-                  <ChevronDown className="h-6 w-6 text-white" />
-                )}
-              </div>
-            </button>
-          </div>
-          
-          {/* Desktop Header */}
-          <h2 className="hidden lg:block text-2xl sm:text-3xl font-bold text-white text-center border-b-2 border-primary pb-2">
-            Research Impact & Applications
+          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center border-b-2 border-primary pb-2">
+            Mentors & Collaborators
           </h2>
           
-          {/* Content - Show based on expanded state on mobile */}
-          <div className={`lg:block ${expandedSections.researchImpact ? 'block' : 'hidden'}`}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              <Card className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 transition-all duration-300">
-                <CardContent className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3">Therapeutic Development</h3>
-                  <p className="text-gray-300 text-sm sm:text-base">
-                    Our designed proteins have potential applications in cancer immunotherapy, 
-                    regenerative medicine, and treatment of immune disorders.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 transition-all duration-300">
-                <CardContent className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3">Technology Innovation</h3>
-                  <p className="text-gray-300 text-sm sm:text-base">
-                    We develop novel computational and experimental approaches that advance 
-                    the field of protein design and structural biology.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 transition-all duration-300 md:col-span-2 lg:col-span-1">
-                <CardContent className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3">Scientific Discovery</h3>
-                  <p className="text-gray-300 text-sm sm:text-base">
-                    Our research uncovers fundamental principles of protein structure-function 
-                    relationships and immune system regulation.
-                  </p>
-                </CardContent>
-              </Card>
+          <div className="space-y-4">
+            <div className="text-center">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">David Baker</h3>
+              <p className="text-gray-300 text-sm sm:text-base">
+                2024 Nobel Laureate in Chemistry, University of Washington
+              </p>
+              <p className="text-gray-300 text-xs sm:text-sm">
+                Collaborated on protein design and Notch signaling research. Former postdoctoral mentor.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">George Daley</h3>
+              <p className="text-gray-300 text-sm sm:text-base">
+                Dean, Harvard Medical School
+              </p>
+              <p className="text-gray-300 text-xs sm:text-sm">
+                Collaborated on Notch signaling research and T cell development studies.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Research Network</h3>
+              <p className="text-gray-300 text-sm sm:text-base">
+                Global Collaborators
+              </p>
+              <p className="text-gray-300 text-xs sm:text-sm">
+                Working with researchers worldwide on protein design, immunology, and stem cell biology.
+              </p>
             </div>
           </div>
         </section>
