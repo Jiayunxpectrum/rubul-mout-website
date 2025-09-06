@@ -12,8 +12,7 @@ export const ResearchTab = () => {
   const [expandedSections, setExpandedSections] = useState<{[key: string]: boolean}>({
     proteinDesign: true,
     immuneCellCancer: true,
-    immunologyAging: true,
-    callToAction: true
+    immunologyAging: true
   });
 
   const toggleSection = (section: string) => {
@@ -236,64 +235,32 @@ export const ResearchTab = () => {
                 Dean, Harvard Medical School
               </p>
               <p className="text-gray-300 text-xs sm:text-sm">
-                Collaborated on Notch signaling research and T cell development studies.
+                Collaborated on Notch signaling research and T cell development studies. Mentor.
               </p>
             </div>
             
             <div className="text-center">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Research Network</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Stephen Blacklow</h3>
               <p className="text-gray-300 text-sm sm:text-base">
-                Global Collaborators
+                Chair, BCMP Department, Harvard Medical School
               </p>
               <p className="text-gray-300 text-xs sm:text-sm">
-                Working with researchers worldwide on protein design, immunology, and stem cell biology.
+                Collaborated on Notch signaling research. Collaborator.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Urban Lendahl</h3>
+              <p className="text-gray-300 text-sm sm:text-base">
+                Former Nobel Committee Chair, Karolinska Institutet
+              </p>
+              <p className="text-gray-300 text-xs sm:text-sm">
+                Collaborated on Notch signaling research. Collaborator.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Call to Action */}
-        <section className="text-center py-8 sm:py-12">
-          {/* Mobile Collapsible Header */}
-          <div className="lg:hidden">
-            <button
-              onClick={() => toggleSection('callToAction')}
-              className="w-full text-center"
-            >
-              <div className="flex items-center justify-center gap-2">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                  Interested in Collaboration?
-                </h3>
-                {expandedSections.callToAction ? (
-                  <ChevronUp className="h-6 w-6 text-white" />
-                ) : (
-                  <ChevronDown className="h-6 w-6 text-white" />
-                )}
-              </div>
-            </button>
-          </div>
-          
-          {/* Desktop Header */}
-          <h3 className="hidden lg:block text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
-            Interested in Collaboration?
-          </h3>
-          
-          {/* Content - Show based on expanded state on mobile */}
-          <div className={`lg:block ${expandedSections.callToAction ? 'block' : 'hidden'}`}>
-            <div className="max-w-4xl mx-auto bg-[#A51C30]/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 border border-[#A51C30]/30 backdrop-blur-sm shadow-[0_0_30px_#A51C3060]">
-              <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto px-4">
-                I'm always open to discussing research opportunities, scientific collaborations, 
-                or speaking engagements in protein design, cancer, and immunobiology.
-              </p>
-              <Button 
-                size="lg"
-                className="bg-white/20 hover:bg-white/30 border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium transition-all duration-300 hover:scale-105"
-              >
-                Get In Touch
-              </Button>
-            </div>
-          </div>
-        </section>
       </div>
     </div>
   );

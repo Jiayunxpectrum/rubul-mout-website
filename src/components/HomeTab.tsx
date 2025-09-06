@@ -136,7 +136,7 @@ export const HomeTab = ({ onNavigate }: HomeTabProps) => {
           </h3>
           <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
             I'm always open to discussing research opportunities, scientific collaborations, 
-            or speaking engagements in protein design and cell biology.
+            or speaking engagements in protein design, cancer, and immunobiology.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button 
