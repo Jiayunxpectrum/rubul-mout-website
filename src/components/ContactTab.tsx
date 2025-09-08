@@ -117,20 +117,6 @@ export const ContactTab = () => {
                         <span className="whitespace-nowrap">Send Email</span>
                       </a>
                     </Button>
-                    <Button 
-                      size="default"
-                      className="bg-[#A51C30] hover:bg-[#A51C30]/90 text-white w-full sm:w-auto px-2 sm:px-3 md:px-4 text-xs sm:text-sm"
-                      onClick={() => {
-                        // Find and click the Ask AI button to open the chatbox
-                        const askAiButton = document.querySelector('[data-testid="ask-ai-button"]') as HTMLButtonElement;
-                        if (askAiButton) {
-                          askAiButton.click();
-                        }
-                       }}
-                    >
-                      <Mail className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                      <span className="whitespace-nowrap">Quick Contact</span>
-                    </Button>
                   </div>
                 )}
               </div>
@@ -139,24 +125,6 @@ export const ContactTab = () => {
         </CardContent>
       </Card>
 
-      {/* AI Assistant Note */}
-      <Card className="bg-[#f2f2f2] border-border/50 backdrop-blur-sm border rounded-2xl p-4 sm:p-6">
-        <CardHeader className="p-4 sm:p-6">
-          <CardTitle className="text-lg sm:text-xl text-black">
-            AI Assistant Available
-          </CardTitle>
-          <CardDescription className="text-gray-900">
-            Get instant help and automatically send emails to Dr. Mout
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="p-4 sm:p-6">
-                     <p className="text-gray-800 text-sm sm:text-base">
-             Use the <strong>"Ask AI"</strong> button (bottom right) to get instant answers to your questions 
-             about Dr. Mout's research, publications, or teaching. The AI can also automatically send 
-             Dr. Mout an email with your contact information and inquiry on your behalf.
-           </p>
-        </CardContent>
-      </Card>
 
       {/* Office Hours Note */}
       <div className="text-center text-muted-foreground px-4">

@@ -205,17 +205,7 @@ export const ChatBox = ({}: ChatBoxProps) => {
   };
 
     if (!isOpen) {
-    return (
-      <div className="fixed bottom-6 right-6 z-[10001]">
-        <Button
-          onClick={() => setIsOpen(true)}
-          className="h-14 px-6 rounded-full bg-[#A51C30] hover:bg-[#A51C30]/90 shadow-lg"
-          data-testid="ask-ai-button"
-        >
-          Ask AI
-        </Button>
-      </div>
-    );
+    return null; // Hide the Ask AI button completely
   }
 
   if (isMinimized) {
